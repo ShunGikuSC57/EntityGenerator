@@ -1,0 +1,82 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.17763.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>EntityGenerator.ico</ApplicationIcon>
+    <AssemblyTitle>Entity生成ツール</AssemblyTitle>
+    <PackageId>$(AssemblyName)</PackageId>
+    <Title>Entity生成ツール</Title>
+    <Authors>Shunji Kikuchi</Authors>
+    <Company />
+    <Product>Entity生成ツール</Product>
+    <Description>直接入力や定義書からエンティティクラスやViewModelを生成するツールです。</Description>
+    <Copyright>Copyright © 2026 Shunji Kikuchi</Copyright>
+    <PackageProjectUrl></PackageProjectUrl>
+    <PackageIcon></PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/ShunGikuSC57/EntityGenerator</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Releases\**" />
+    <EmbeddedResource Remove="Releases\**" />
+    <None Remove="Releases\**" />
+    <Page Remove="Releases\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Images\CS.png" />
+    <None Remove="Images\Excel.png" />
+    <None Remove="Images\Exit.png" />
+    <None Remove="Images\File.png" />
+    <None Remove="Images\JSON.png" />
+    <None Remove="テーブル定義書.xlsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="EntityGenerator.ico" />
+    <Content Include="テーブル定義書.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.105.0" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\CS.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Excel.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Exit.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\File.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\JSON.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="EntityGenerator.ico">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
